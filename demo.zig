@@ -1,3 +1,5 @@
+// These examples are modified from Zig documentation.
+
 // Top-level definitions are order independent.
 const assert = std.debug.assert;
 const std = @import("std");
@@ -30,7 +32,7 @@ const Payload = union(enum) {
 
 test "access union" {
     const payload = Payload{ .Int = 2 };
-    assert(payload.Float == 2);
+    // assert(payload.Float == 2);
     const result = switch (payload) {
         Payload.Int => |value| -1 * value,
         Payload.Float => 0,
